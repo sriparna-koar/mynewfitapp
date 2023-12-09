@@ -1,0 +1,145 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #a8dadc;
+  color: #333;
+  padding: 0;
+  height: 100vh;
+  background-image:'logp.png';
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  justify-content: center;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  max-width: 200px;
+  height: auto;
+}
+
+.section-header {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.calorie-tracker,
+.exercise-schedule,
+.add-notes {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.notification-bar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.event {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event:hover {
+  background-color: #98c1ed;
+}
+
+.add-notes input[type='text'],
+.add-notes textarea,
+.add-notes button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-notes button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.add-notes button:hover {
+  background-color: #218838;
+}
+
+.add-notes .note-list {
+  list-style: none;
+  padding: 0;
+}
+
+.add-notes .note-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-notes .note-item strong {
+  margin-right: 5px;
+}
+
+.add-notes .note-item button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-notes .note-item button:hover {
+  background-color: #c82333;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply animation to specific components */
+.HomePage {
+  animation: fadeIn 1s ease-in-out; /* Apply fadeIn animation to HomePage component */
+}

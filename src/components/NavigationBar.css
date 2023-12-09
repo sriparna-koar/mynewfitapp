@@ -1,0 +1,21 @@
+/* NavigationBar.css */
+
+
+.navbar-nav .nav-link {
+  color: #351111;
+  margin-right: 15px; 
+  transition: color 0.3s ease-in-out; 
+  font-size: 18px;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #361818;
+  text-decoration: none;
+}
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Adjustments for active link */

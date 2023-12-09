@@ -1,0 +1,27 @@
+/* ExerciseDetail.css */
+
+.exercise-detail {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .exercise-detail h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .exercise-detail p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .exercise-demo iframe {
+    /* Adjust the size of the video iframe */
+    width: 20%; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+  }
+  
+  /* Add more styles as needed */
+  

@@ -1,0 +1,23 @@
+/* HomePage.css */
+
+.home-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .app-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* HomePage.css */
+
+/* ... other styles */
+
+.app-logo {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    animation: rotateLogo 4s linear infinite; /* Apply the animation */
+  }
+  
+  
