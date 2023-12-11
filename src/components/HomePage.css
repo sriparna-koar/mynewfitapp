@@ -1,23 +1,56 @@
 /* HomePage.css */
-
 .home-page {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .app-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  /* HomePage.css */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
 
-/* ... other styles */
+.app-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f5ebe0;
+  text-transform: uppercase;
+}
 
 .app-logo {
-    width: 200px; /* Adjust size as needed */
-    height: auto;
-    animation: rotateLogo 4s linear infinite; /* Apply the animation */
+  width: 200px;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.app-logo:hover {
+  transform: scale(1.1);
+}
+
+.home-page p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #f5ebe0;
+  max-width: 600px;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.app-title,
+.home-page p,
+.app-logo {
+  animation: fadeInUp 0.8s ease-out forwards;
+}

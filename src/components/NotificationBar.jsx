@@ -1,81 +1,101 @@
+import React, { useState, useEffect } from 'react';
 
-import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import './NotificationBar.css';
+const NotificationBar = ({ setNotification }) => {
+  const [exerciseName, setExerciseName] = useState('');
+  const [notificationTime, setNotificationTime] = useState('');
+  const [message, setMessage] = useState('');
+  const [notifications, setNotifications] = useState([]);
 
-const NotificationBar = () => {
-  const [notification, setNotification] = useState({
-    text: '',
-    timeout: 0,
-    type: 'info',
-  });
+  const handleExerciseNameChange = (event) => {
+    setExerciseName(event.target.value);
+  };
 
-  const addNotification = () => {
-    const { text, timeout, type } = notification;
-    const options = {
-      autoClose: timeout,
-      type,
-      onClose: () => console.log('Notification closed'),
+  const handleNotificationTimeChange = (event) => {
+    setNotificationTime(event.target.value);
+  };
+
+  const handleMessageChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const handleSetNotification = () => {
+    const notificationData = {
+      exerciseName,
+      notificationTime: new Date(notificationTime),
+      message,
     };
 
-    const toastId = toast(text, options);
-
-    if (timeout > 0) {
-      setTimeout(() => {
-        toast.dismiss(toastId);
-      }, timeout);
-    }
+    setNotification(notificationData);
+    setNotifications([...notifications, notificationData]);
+    setExerciseName('');
+    setNotificationTime('');
+    setMessage('');
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNotification((prevNotification) => ({
-      ...prevNotification,
-      [name]: value,
-    }));
+  const checkNotificationTime = (notificationTime) => {
+    const now = new Date();
+    const timeDifference = new Date(notificationTime) - now;
+    return timeDifference <= 0;
   };
 
-  return (
-    <div className="notification-container">
-      <input
-        type="text"
-        name="text"
-        value={notification.text}
-        onChange={handleInputChange}
-        placeholder="Enter notification message"
-      />
-      <input
-        type="number"
-        name="timeout"
-        value={notification.timeout}
-        onChange={handleInputChange}
-        placeholder="Enter notification duration in milliseconds"
-      />
-      <select
-        name="type"
-        value={notification.type}
-        onChange={handleInputChange}
-      >
-        <option value="info">Info</option>
-        <option value="success">Success</option>
-        <option value="warning">Warning</option>
-        <option value="error">Error</option>
-      </select>
-      <button onClick={addNotification}>
-        Add Notification
-      </button>
-      <ToastContainer position="bottom-right" />
-    </div>
-  );
-};
+  useEffect(() => {
+    const updateNotifications = () => {
+      const updatedNotifications = notifications.map((notification) => {
+        return {
+          ...notification,
+          isApproaching: checkNotificationTime(notification.notificationTime),
+        };
+      });
+      setNotifications(updatedNotifications);
+    };
 
-const App = () => {
+    const timer = setInterval(() => {
+      updateNotifications();
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [notifications]);
+
   return (
     <div>
-      <h1>Notification Bar</h1>
-      <NotificationBar />
+      <div>
+        <input
+          type="text"
+          placeholder="Exercise Name"
+          value={exerciseName}
+          onChange={handleExerciseNameChange}
+        />
+        <input
+          type="datetime-local"
+          value={notificationTime}
+          onChange={handleNotificationTimeChange}
+        />
+        <input
+          type="text"
+          placeholder="Notification Message"
+          value={message}
+          onChange={handleMessageChange}
+        />
+        <button onClick={handleSetNotification}>Set Notification</button>
+      </div>
+
+      <div>
+        <h2>Notifications</h2>
+        <ul>
+          {notifications.map((notification, index) => (
+            <li key={index}>
+              {notification.exerciseName} - {notification.notificationTime.toString()}{' '}
+              {notification.isApproaching ? '(Approaching)' : ''}
+              <br />
+              {notification.message && `Message: ${notification.message}`}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
 
-export default App;
+export default NotificationBar;

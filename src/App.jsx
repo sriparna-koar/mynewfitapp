@@ -42,7 +42,7 @@ const App = () => {
   };
 
   return (
-    <Router  basename={import.meta.env.BASE_URL}>
+    <Router basename={import.meta.env.BASE_URL}>
       <div>
         <NavigationBar />
         <Routes>
