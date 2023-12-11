@@ -61,6 +61,8 @@ const AddNotes = () => {
           value={workoutDetails}
           onChange={setWorkoutDetails}
           placeholder="Enter workout details"
+          style={{ color: 'white', fontSize: '17px' }}
+          
         />
       </div>
       <button onClick={handleAddNote}>Add Workout Note</button>

@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.png'; // Import your logo image
-import './HomePage.css'; // Import your CSS file
+import logo from './logo.png'; 
+import './HomePage.css'; 
 
 const HomePage = () => {
   return (

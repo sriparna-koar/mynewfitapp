@@ -1,4 +1,4 @@
-.calorie-tracker-container {
+/* .calorie-tracker-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,4 +76,95 @@
 
 .add-custom-food button:hover {
   background-color: #218838;
+} */
+/* CalorieTracker.css */
+
+.calorie-tracker-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  color: white;
+  
+}
+
+.food-selection,
+.add-custom-food {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  color: black;
+}
+
+.food-selection h3,
+.add-custom-food h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.food-selection ul,
+.add-custom-food ul {
+  list-style: none;
+  padding: 0;
+}
+
+.food-selection li,
+.add-custom-food li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.food-selection li button,
+.add-custom-food li button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+}
+
+.food-selection li button:hover,
+.add-custom-food li button:hover {
+  background-color: #2980b9;
+}
+
+.logged-meals {
+  margin-top: 20px;
+}
+
+.logged-meals ul {
+  margin-top: 10px;
+}
+
+.log-meal-btn,
+.add-food-btn,
+.logged-meals button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #27ae60;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.log-meal-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.logged-meals button {
+  margin-top: 5px;
+}
+
+.clear-logs-btn {
+  margin-top: 10px;
 }

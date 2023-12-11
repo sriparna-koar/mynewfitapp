@@ -1,111 +1,106 @@
+
 .add-notes-container {
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-  height: 100%;
-  margin: 0 auto;
-  width: 100%;
-  padding: 30px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #323b19; 
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(50, 13, 13, 0.1);
+  font-size: 19px;
 }
 
-
-.add-notes-container > div {
-  margin-bottom: 15px; /* Adjust as needed */
+.add-notes-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fefae0;
 }
 
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  justify-content: center;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
+.add-notes-container label {
   display: block;
+  margin-bottom: 5px;
+  color: #fefae0;
 }
 
-input[type='text'],
-textarea {
+.add-notes-container input[type='text'],
+.add-notes-container .react-datepicker-wrapper {
   width: 100%;
   padding: 8px;
   margin-bottom: 15px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-   border: 1px solid #000000;
-  background-color: rgb(220, 217, 213);
+  border: 1px solid #fefae0;
+  border-radius: 4px;
 }
 
-button {
-  padding: 8px 15px;
-  background-color: #007bff;
-  color: white;
+.add-notes-container .react-datepicker-wrapper {
+  display: block;
+  font-size: 19px;
+}
+
+.add-notes-container button {
+  padding: 8px 20px;
+  margin-top: 10px;
+  color: #1c1a10;
+  font-size: 15px;
+  font-style: oblique;
+  background-color: #7993af;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
-button:hover {
-  background-color: #598fc9;
+.add-notes-container button:hover {
+  background-color: #a0b1c3;
 }
 
 .note-list {
   list-style: none;
   padding: 0;
-  border: 1px solid #000000;
 }
 
 .note-item {
-  margin-bottom: 15px;
+  margin-top: 15px;
   padding: 15px;
-  border: 1px solid #000000;
-  background-color: lightseagreen;
-  border-radius: 8px;
-  position: relative;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #000000;
-}
-
-.note-item strong {
-  margin-right: 5px;
+  background-color: #fefae0;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .note-item button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+  margin-left: 10px;
+  padding: 5px 10px;
+  color: #fefae0;
   background-color: #dc3545;
-  color: white;
   border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .note-item button:hover {
   background-color: #c82333;
 }
+
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .note-item-enter {
   opacity: 0;
+  transform: translateY(-20px);
 }
 
 .note-item-enter-active {
   opacity: 1;
-  transition: opacity 500ms;
+  transform: translateY(0);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
 }
-
-.note-item-exit {
-  opacity: 1;
-}
-
-.note-item-exit-active {
-  opacity: 0;
-  transition: opacity 500ms;
+.add-notes-container h3 {
+  color: #fff; 
 }

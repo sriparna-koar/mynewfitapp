@@ -1,11 +1,11 @@
-/* NavigationBar.css */
+
 
 
 .navbar-nav .nav-link {
   color: #351111;
   margin-right: 15px; 
   transition: color 0.3s ease-in-out; 
-  font-size: 18px;
+  font-size: 19px;
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -14,8 +14,22 @@
 }
 .navbar-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
 }
 
-/* Adjustments for active link */
+.navbar {
+  background-color: #1f2217; 
+}
+
+.navbar-brand,
+.nav-link {
+  color: #fff !important; 
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #99a965 !important; 
+}
+
+
