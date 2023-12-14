@@ -15,6 +15,7 @@
 .navbar-nav {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: row;
   width: 100%;
 }
 
@@ -32,4 +33,17 @@
   color: #99a965 !important; 
 }
 
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: row;
+    padding: 10px 0;
+  }
 
+  .navbar-brand,
+  .nav-link {
+    text-align: center;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc; 
+  }
+}

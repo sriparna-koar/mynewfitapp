@@ -1,11 +1,15 @@
 
 .add-notes-container {
   margin: 20px;
-  padding: 20px;
+  
   background-color: #323b19; 
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(50, 13, 13, 0.1);
   font-size: 19px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
 .add-notes-container h2 {

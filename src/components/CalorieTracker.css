@@ -1,97 +1,19 @@
-/* .calorie-tracker-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Arial, sans-serif;
-}
 
-.food-selection {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 8px;
-  width: 60%;
-  transition: all 0.3s ease;
-}
-
-.food-selection ul {
-  list-style: none;
-  padding: 0;
-}
-
-.food-selection li {
-  margin-bottom: 10px;
-}
-
-.food-selection li button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.food-selection li button:hover {
-  background-color: #0056b3;
-}
-
-.logged-meals {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 8px;
-  width: 60%;
-  transition: all 0.3s ease;
-}
-
-.add-custom-food {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 8px;
-  width: 60%;
-  transition: all 0.3s ease;
-}
-
-.add-custom-food div {
-  margin-bottom: 10px;
-}
-
-.add-custom-food input {
-  margin-right: 10px;
-  padding: 5px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.add-custom-food button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.add-custom-food button:hover {
-  background-color: #218838;
-} */
-/* CalorieTracker.css */
 
 .calorie-tracker-container {
   display: flex;
-  justify-content: space-around;
+  background-color: #323b19; 
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: flex-start;
   margin-top: 20px;
   font-family: Arial, sans-serif;
   color: white;
-  
 }
 
 .food-selection,
 .add-custom-food {
-  flex: 1;
+  flex: 1 1 100%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -146,7 +68,8 @@
 
 .log-meal-btn,
 .add-food-btn,
-.logged-meals button {
+.logged-meals button,
+.clear-logs-btn {
   padding: 8px 16px;
   border: none;
   border-radius: 5px;
@@ -167,4 +90,25 @@
 
 .clear-logs-btn {
   margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .calorie-tracker-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .food-selection,
+  .add-custom-food {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .log-meal-btn,
+  .add-food-btn,
+  .logged-meals button,
+  .clear-logs-btn {
+    width: 100%;
+  }
 }
