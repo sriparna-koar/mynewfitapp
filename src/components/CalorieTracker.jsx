@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 
-
 import './CalorieTracker.css';
 const FoodDatabase = [
     { id: 1, name: 'Apple', calories: 95 },
@@ -170,7 +169,6 @@ const CalorieTracker = () => {
 
           ))}
         </ul>
-        
     
       </div>
     </div>
