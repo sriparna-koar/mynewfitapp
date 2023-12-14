@@ -1,27 +1,42 @@
-/* ExerciseDetail.css */
 
 .exercise-detail {
-    background-color: #f5f5f5;
+  background-color: #323b19; 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(5, 0, 0, 0.1);
+    color: white;
   }
   
   .exercise-detail h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    color: aliceblue;
   }
   
   .exercise-detail p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
+    color: aliceblue;
   }
   .exercise-demo iframe {
-    /* Adjust the size of the video iframe */
-    width: 20%; /* Adjust as needed */
-    height: 200px; /* Adjust as needed */
+    width: 20%;
+    height: 200px;
+    color: aliceblue;
   }
+  .exercise-detail a{
+    color: rgb(12, 10, 10);
+    text-decoration: none;
+    font-weight: bold;
+    }
+ 
+  .exercise-detail a:hover {
   
-  /* Add more styles as needed */
-  
+  color: #ffcc00;
+}
+
+  @media only screen and (max-width: 600px) {
+    .exercise-detail {
+      padding: 10px;
+    }
+  }

@@ -5,7 +5,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #323b19; 
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -13,9 +13,11 @@
 .exercise-schedule h1 {
   font-size: 2em;
   margin-bottom: 20px;
-  color: #333;
+  color: #ffffff;
 }
-
+.exercise-schedule a{
+color: white;
+}
 .rbc-calendar {
   border: 1px solid #ccc;
   background-color: #fff;
@@ -31,7 +33,7 @@
 .exercise-schedule h2 {
   font-size: 1.5em;
   margin-top: 20px;
-  color: #333;
+  color: #ffffff;
 }
 
 .exercise-schedule ul {
