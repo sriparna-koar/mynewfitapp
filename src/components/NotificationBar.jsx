@@ -1,4 +1,7 @@
+
+
 import React, { useState, useEffect } from 'react';
+import './NotificationBar.css';
 
 const NotificationBar = ({ setNotification }) => {
   const [exerciseName, setExerciseName] = useState('');
@@ -59,37 +62,41 @@ const NotificationBar = ({ setNotification }) => {
   }, [notifications]);
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="notification-form">
         <input
           type="text"
           placeholder="Exercise Name"
           value={exerciseName}
           onChange={handleExerciseNameChange}
+          className="input-style"
         />
         <input
           type="datetime-local"
           value={notificationTime}
           onChange={handleNotificationTimeChange}
+          className="input-style"
         />
         <input
           type="text"
           placeholder="Notification Message"
           value={message}
           onChange={handleMessageChange}
+          className="input-style"
         />
-        <button onClick={handleSetNotification}>Set Notification</button>
+        <button onClick={handleSetNotification} className="button-style">
+          Set Notification
+        </button>
       </div>
 
-      <div>
+      <div className="notification-list" >
         <h2>Notifications</h2>
         <ul>
           {notifications.map((notification, index) => (
-            <li key={index}>
-              {notification.exerciseName} - {notification.notificationTime.toString()}{' '}
-              {notification.isApproaching ? '(Approaching)' : ''}
-              <br />
-              {notification.message && `Message: ${notification.message}`}
+            <li key={index} className={`notification-item ${notification.isApproaching ? 'approaching' : ''}`}>
+              <span className="notification-name">{notification.exerciseName}</span>
+              <span className="notification-time">{new Date(notification.notificationTime).toLocaleString()}</span>
+              {notification.message && <span className="notification-message">Message: {notification.message}</span>}
             </li>
           ))}
         </ul>

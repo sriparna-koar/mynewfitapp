@@ -23,6 +23,7 @@ const App = () => {
       end: new Date(2023, 10, 22, 18, 0, 0),
     },
   ]);
+  const [notification, setNotification] = useState(null);
 
   const handleSelect = ({ start, end }) => {
     const title = window.prompt('Enter event title:');
@@ -33,12 +34,23 @@ const App = () => {
         end,
       };
       setEvents([...events, newEvent]);
+      setNotificationMessage(`Event "${title}" added`);
+      setNotificationOpen(true);
+
+      setTimeout(() => {
+        setNotificationOpen(false);
+      }, 3000); // Adjust the timeout as needed
     }
   };
 
-  const handleDelete = eventId => {
-    const updatedEvents = events.filter(event => event !== eventId);
+  const handleDelete = (eventId) => {
+    const updatedEvents = events.filter((event) => event !== eventId);
     setEvents(updatedEvents);
+    
+  };
+
+  const handleNotificationClose = () => {
+    setNotificationOpen(false);
   };
 
   return (
@@ -57,11 +69,18 @@ const App = () => {
                 events={events}
                 handleSelect={handleSelect}
                 handleDelete={handleDelete}
+
               />
             }
           />
-          <Route path="/notification" element={<NotificationBar />} />
-          {/* Add additional routes here */}
+          <Route
+            path="/notification"
+            element={
+              <NotificationBar
+              setNotification={setNotification}
+              />
+            }
+          />
         </Routes>
       </div>
     </Router>

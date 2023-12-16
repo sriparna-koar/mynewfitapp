@@ -19,6 +19,7 @@
 color: white;
 }
 .rbc-calendar {
+  width: 100%;
   border: 1px solid #ccc;
   background-color: #fff;
   border-radius: 5px;
@@ -61,4 +62,13 @@ color: white;
 
 .exercise-schedule li button:hover {
   background-color: #c0392b;
+}
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
 }
