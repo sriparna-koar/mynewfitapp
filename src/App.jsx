@@ -34,12 +34,7 @@ const App = () => {
         end,
       };
       setEvents([...events, newEvent]);
-      setNotificationMessage(`Event "${title}" added`);
-      setNotificationOpen(true);
-
-      setTimeout(() => {
-        setNotificationOpen(false);
-      }, 3000); // Adjust the timeout as needed
+      
     }
   };
 
@@ -49,10 +44,7 @@ const App = () => {
     
   };
 
-  const handleNotificationClose = () => {
-    setNotificationOpen(false);
-  };
-
+  
   return (
     <Router basename={import.meta.env.BASE_URL}>
       <div>

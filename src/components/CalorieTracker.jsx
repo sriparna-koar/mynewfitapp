@@ -5,8 +5,8 @@ import './CalorieTracker.css';
 const FoodDatabase = [
     { id: 1, name: 'Apple', calories: 95 },
     { id: 2, name: 'Banana', calories: 105 },
-    { id: 3, name: 'Chicken Breast', calories: 165, protein: 31, carbs: 0, fat: 3.6 },
-  { id: 4, name: 'Broccoli', calories: 55, protein: 4.3, carbs: 10, fat: 0.6 },
+    { id: 3, name: 'Chicken Breast', calories: 165 },
+  { id: 4, name: 'Broccoli', calories: 55 },
   ];
   
 const CalorieTracker = () => {
@@ -25,7 +25,7 @@ const CalorieTracker = () => {
   const handleBurntCaloriesSubmit = (e) => {
     e.preventDefault();
     
-    const burntCalories = calculateBurntCalories(activity, duration); // Implement this function
+    const burntCalories = calculateBurntCalories(activity, duration);
     setCaloriesBurnt(caloriesBurnt + burntCalories);
     setActivity('');
     setDuration(0);
@@ -76,27 +76,7 @@ const CalorieTracker = () => {
     setCustomFoodList(updatedCustomFoodList);
   
   };
-  const calculateBurntCalories = (activity, duration) => {
-    
-    let burntCalories = 0;
-  
-    
-    const metValues = {
-      walking: 3.5, 
-      running: 7.0, 
-      cycling: 8.0, 
-     
-    };
-  
-    if (activity.toLowerCase() in metValues) {
-     
-      const hours = duration / 60;
-      burntCalories = metValues[activity.toLowerCase()] * hours * 60 * userWeight;
-      
-    }
-  
-    return burntCalories;
-  };
+ 
   
 
   

@@ -1,66 +1,4 @@
-// import React, { useState } from 'react';
-// import ExerciseDemo from './ExerciseDemo';
-// import './ExerciseDetail.css';
 
-// const ExerciseDetail = () => {
-  
-//   const initialExerciseDetails = [
-//     {
-//       name: 'Squats',
-//       videoURL: 'https://www.youtube.com/watch?v=_uZLFUnKSaM',
-//       description: 'Perform squats to strengthen your legs and glutes.',
-//     },
-//     {
-//       name: 'Push-ups',
-//       videoURL: 'https://www.youtube.com/watch?v=YOUR_PUSHUPS_VIDEO_ID', // Replace with the correct push-ups video URL
-//       description: 'Do push-ups to strengthen your chest, arms, and core.',
-//     },
-//     {
-//       name: 'Plank',
-//       videoURL: 'https://www.youtube.com/embed/https://www.youtube.com/watch?v=YaXPRqUwItQ', // Replace with the correct plank video URL
-//       description: 'Hold a plank to work on your core strength and stability.',
-//     },
-//     {
-//       name: 'Lunges',
-//       videoURL: 'https://www.youtube.com/embed/YOUR_LUNGES_VIDEO_ID', // Replace with the correct lunges video URL
-//       description: 'Perform lunges to target your legs and glutes.',
-//     },
-//   ];
-  
-//   const [exerciseDetails, setExerciseDetails] = useState(initialExerciseDetails);
-//   const [searchTerm, setSearchTerm] = useState('');
-
-//   const handleSearch = (e) => {
-//     setSearchTerm(e.target.value);
-//   };
-
-//   const filteredExercises = exerciseDetails.filter((exercise) =>
-//     exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
-//   );
-
-//   return (
-//     <div className="exercise-detail">
-//       <input
-//         type="text"
-//         placeholder="Search exercise by name"
-//         value={searchTerm}
-//         onChange={handleSearch}
-//       />
-//       {filteredExercises.map((exercise, index) => (
-//         <div key={index}>
-//           <h2>{exercise.name}</h2>
-//           <p>{exercise.description}</p>
-//           <ExerciseDemo
-//             exerciseName={exercise.name}
-//             videoURL={exercise.videoURL}
-//           />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default ExerciseDetail;
 import React, { useState } from 'react';
 import ExerciseDemo from './ExerciseDemo';
 import './ExerciseDetail.css';
@@ -113,19 +51,19 @@ const ExerciseDetail = () => {
         value={searchTerm}
         onChange={handleSearch}
       />
-      {filteredExercises.map((exercise, index) => (
-        <div key={index}>
-          <h2>{exercise.name}</h2>
-          <img src={exercise.imageURL} alt={exercise.name} />
-          <p>{exercise.description}</p>
-          <p>
-            <a href={exercise.videoURL} target="_blank" rel="noopener noreferrer">
-              Watch on YouTube
-            </a>
-          </p>
-        
-        </div>
-      ))}
+     {filteredExercises.map((exercise, index) => (
+  <div key={index}>
+    <h2>{exercise.name}</h2>
+    <img src={exercise.imageURL} alt={exercise.name} />
+    <p>{exercise.description}</p>
+    <p>
+      <a href={exercise.videoURL} target="_blank" rel="noopener noreferrer">
+        Watch on YouTube
+      </a>
+    </p>
+  </div>
+))}
+
     </div>
   );
 };

@@ -51,16 +51,17 @@
     font-weight: bold;
     margin-right: 10px;
     font-size: 19px;
+    color: #ffffff;
   }
   
   .notification-time {
-    color: #000000;
+    color: #ffffff;
     font-size: 16px;
   }
   
   .notification-message {
     font-style: italic;
-    color: #000000;
+    color: #ffffff;
     font-size: 14px;
   }
   .notification-item {

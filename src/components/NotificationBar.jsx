@@ -35,31 +35,6 @@ const NotificationBar = ({ setNotification }) => {
     setMessage('');
   };
 
-  const checkNotificationTime = (notificationTime) => {
-    const now = new Date();
-    const timeDifference = new Date(notificationTime) - now;
-    return timeDifference <= 0;
-  };
-
-  useEffect(() => {
-    const updateNotifications = () => {
-      const updatedNotifications = notifications.map((notification) => {
-        return {
-          ...notification,
-          isApproaching: checkNotificationTime(notification.notificationTime),
-        };
-      });
-      setNotifications(updatedNotifications);
-    };
-
-    const timer = setInterval(() => {
-      updateNotifications();
-    }, 1000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [notifications]);
 
   return (
     <div className="container">
@@ -92,8 +67,8 @@ const NotificationBar = ({ setNotification }) => {
       <div className="notification-list" >
         <h2>Notifications</h2>
         <ul>
-          {notifications.map((notification, index) => (
-            <li key={index} className={`notification-item ${notification.isApproaching ? 'approaching' : ''}`}>
+          {notifications.map((notification) => (
+            <li>
               <span className="notification-name">{notification.exerciseName}</span>
               <span className="notification-time">{new Date(notification.notificationTime).toLocaleString()}</span>
               {notification.message && <span className="notification-message">Message: {notification.message}</span>}
